@@ -69,10 +69,10 @@ Banco de dados MongoDB Cloud
 ```
 
 ## Insomnia
-No diretório [Insomnia](Insomnia/README.md) está disponível para testes as collections e o environment para utilização no [Insomnia](Insomnia/README.md).
+No diretório [Insomnia](Insomnia/) está disponível para testes as collections e o environment para utilização no [Insomnia](Insomnia/).
 
 ## Postman
-No diretório [Postman](Postman/README.md) está disponível para testes as collections e o environment para utilização no [Postman](Postman/README.md).
+No diretório [Postman](Postman/) está disponível para testes as collections e o environment para utilização no [Postman](Postman/).
 
 ## Servidor em produção
 
