@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "2e873d1d-db74-4c46-8575-e4e228e8e0ad",
+		"name": "URL-Shortner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Start",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}",
+					"host": [
+						"{{server}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/status",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shorten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"originURL\": \"https://www.google.com/search?client=firefox-b-d&q=uma+url+grande\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/shorten",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
