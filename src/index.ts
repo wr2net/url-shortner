@@ -25,3 +25,6 @@ api.post('/shorten', urlController.shorten);
 api.get('/:hash', urlController.redirect);
 
 api.listen(5000, () => console.log('Server started'));
+
+api.use('/.netlify/funcions/api', api);
+module.exports.handler = serverless(api);
