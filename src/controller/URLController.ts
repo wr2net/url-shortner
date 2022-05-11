@@ -32,4 +32,11 @@ export class URLController {
     public async start(req: Request, res: Response): Promise<void> {
         res.status(200).json({ access: 'https://github.com/wr2net/url-shortner' })
     }
+
+    public async status(req: Request, res: Response): Promise<void> {
+        res.status(200).json({
+            status: 200,
+            message: 'It`s working!!',
+        })
+    }
 }
