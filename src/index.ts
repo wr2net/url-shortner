@@ -16,14 +16,8 @@ database.connect();
 
 const urlController = new URLController();
 
-router.get('/status', (res: Response) => {
-    res.json({
-        status: 200,
-        message: 'It`s working!!',
-    })
-});
-
 router.get('/', urlController.start);
+router.get('/', urlController.status);
 router.post('/shorten', urlController.shorten);
 router.get('/:hash', urlController.redirect);
 
