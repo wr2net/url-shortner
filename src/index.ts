@@ -1,8 +1,10 @@
 require('dotenv').config();
 
 import express, {Request, Response} from 'express';
-import { URLController } from './controller/URLController'
-import { MongoConnection } from './database/MongoConnection'
+import { URLController } from './controller/URLController';
+import { MongoConnection } from './database/MongoConnection';
+
+const serverless = require('serverless-http');
 
 const api = express();
 const router = express.Router();
@@ -14,7 +16,7 @@ database.connect();
 
 const urlController = new URLController();
 
-router.get('/status', (req: Request, res: Response) => {
+router.get('/status', (res: Response) => {
     res.json({
         status: 200,
         message: 'It`s working!!',
