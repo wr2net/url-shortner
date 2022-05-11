@@ -5,6 +5,7 @@ import { URLController } from './controller/URLController'
 import { MongoConnection } from './database/MongoConnection'
 
 const api = express();
+const router = express.Router();
 
 api.use(express.json());
 
@@ -13,18 +14,18 @@ database.connect();
 
 const urlController = new URLController();
 
-api.get('/status', (req: Request, res: Response) => {
+router.get('/status', (req: Request, res: Response) => {
     res.json({
         status: 200,
         message: 'It`s working!!',
     })
 });
 
-api.get('/', urlController.start);
-api.post('/shorten', urlController.shorten);
-api.get('/:hash', urlController.redirect);
+router.get('/', urlController.start);
+router.post('/shorten', urlController.shorten);
+router.get('/:hash', urlController.redirect);
 
 api.listen(5000, () => console.log('Server started'));
 
-api.use('/.netlify/funcions/api', api);
+api.use('/.netlify/funcions/api', router);
 module.exports.handler = serverless(api);
